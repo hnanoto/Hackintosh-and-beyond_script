@@ -1,0 +1,140 @@
+#!/bin/bash
+
+#set -x
+
+clear
+
+echo "<-- hnanoto-Hackintosh and beyond  -->"
+
+echo "            "
+echo "##### !!! DOWNLOADING FILES !!! #####"
+echo "            "
+mkdir /$HOME/Desktop/KextsCodiFonteRelease
+cd /$HOME/Desktop/KextsCodiFonteRelease
+git clone https://github.com/acidanthera/OpenCorePkg.git
+git clone https://github.com/acidanthera/OcBinaryData.git
+git clone https://github.com/TomHeaven/MacKernelSDK.git
+git clone https://github.com/acidanthera/Lilu
+git clone https://github.com/acidanthera/RestrictEvents
+git clone https://github.com/acidanthera/AppleALC
+git clone https://github.com/acidanthera/AirportBrcmFixup
+git clone https://github.com/acidanthera/EmeraldSDHC
+git clone https://github.com/acidanthera/WhateverGreen
+git clone https://github.com/acidanthera/NVMeFix
+git clone https://github.com/acidanthera/BrightnessKeys
+git clone https://github.com/acidanthera/HibernationFixup
+git clone https://github.com/acidanthera/DebugEnhancer
+git clone https://github.com/acidanthera/CpuTscSync
+git clone https://github.com/acidanthera/CryptexFixup
+git clone https://github.com/acidanthera/FeatureUnlock
+git clone https://github.com/acidanthera/CPUFriend
+git clone https://github.com/acidanthera/VoodooPS2
+git clone https://github.com/acidanthera/IntelMausi
+git clone https://github.com/acidanthera/RTCMemoryFixup
+git clone https://github.com/acidanthera/VirtualSMC
+git clone https://github.com/hnanoto/Bluetooth-File-Exchange.git
+git clone https://github.com/Mieze/LucyRTL8125Ethernet.git
+git clone https://github.com/acidanthera/BrcmPatchRAM.git
+git clone https://github.com/OpenIntelWireless/IntelBluetoothFirmware.git
+git clone https://github.com/OpenIntelWireless/OpenIntelWireless.github.io.git
+git clone https://github.com/OpenIntelWireless/itlwm.git
+git clone https://github.com/OpenIntelWireless/itlwm/files/12299048/AirportItlwm-Sonoma-Preview05.zip
+git clone https://github.com/Mieze/RTL8111_driver_for_OS_X.git
+git clone https://github.com/hnanoto/AirPort-Utility.git
+echo "            "
+echo "##### !!! COPY LILU TO FOLDERS !!! #####"
+echo "            "
+cd /$HOME/Desktop/KextsCodiFonteRelease
+cp -r ./MacKernelSDK ./Lilu
+xcodebuild -project ./Lilu/Lilu.xcodeproj -configuration Debug clean build ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease
+cp -r ./Release/Lilu.kext ./RestrictEvents
+cp -r ./Release/Lilu.kext ./AppleALC
+cp -r ./Release/Lilu.kext ./AirportBrcmFixup
+cp -r ./Release/Lilu.kext ./EmeraldSDHC
+cp -r ./Release/Lilu.kext ./WhateverGreen
+cp -r ./Release/Lilu.kext ./NVMeFix
+cp -r ./Release/Lilu.kext ./BrightnessKeys
+cp -r ./Release/Lilu.kext ./HibernationFixup
+cp -r ./Release/Lilu.kext ./DebugEnhancer
+cp -r ./Release/Lilu.kext ./CpuTscSync
+cp -r ./Release/Lilu.kext ./CryptexFixup
+cp -r ./Release/Lilu.kext ./FeatureUnlock
+cp -r ./Release/Lilu.kext ./CPUFriend
+cp -r ./Release/Lilu.kext ./VoodooPS2
+cp -r ./Release/Lilu.kext ./IntelMausi
+cp -r ./Release/Lilu.kext ./RTCMemoryFixup
+cp -r ./Release/Lilu.kext ./VirtualSMC
+cp -r ./Release/Lilu.kext ./BrcmPatchRAM
+cp -r ./Release/Lilu.kext ./IntelBluetoothFirmware
+echo "            "
+echo "##### !!! COPY MacKernelSDK TO FOLDERS !!! #####"
+echo "            "
+cd /$HOME/Desktop/KextsCodiFonteRelease
+cp -r ./MacKernelSDK ./RestrictEvents
+cp -r ./MacKernelSDK ./AppleALC
+cp -r ./MacKernelSDK ./AirportBrcmFixup
+cp -r ./MacKernelSDK ./EmeraldSDHC
+cp -r ./MacKernelSDK ./WhateverGreen
+cp -r ./MacKernelSDK ./NVMeFix
+cp -r ./MacKernelSDK ./BrightnessKeys
+cp -r ./MacKernelSDK ./HibernationFixup
+cp -r ./MacKernelSDK ./DebugEnhancer
+cp -r ./MacKernelSDK ./CpuTscSync
+cp -r ./MacKernelSDK ./CryptexFixup
+cp -r ./MacKernelSDK ./FeatureUnlock
+cp -r ./MacKernelSDK ./CPUFriend
+cp -r ./MacKernelSDK ./VoodooPS2
+cp -r ./MacKernelSDK ./IntelMausi
+cp -r ./MacKernelSDK ./RTCMemoryFixup
+cp -r ./MacKernelSDK ./VirtualSMC
+cp -r ./MacKernelSDK ./Bluetooth-File-Exchange
+cp -r ./MacKernelSDK ./LucyRTL8125Ethernet
+cp -r ./MacKernelSDK ./BrcmPatchRAM
+cp -r ./MacKernelSDK ./IntelBluetoothFirmware
+cp -r ./MacKernelSDK ./OpenIntelWireless
+cp -r ./MacKernelSDK ./OpenIntelWireless/itlwm
+cp -r ./MacKernelSDK ./AirportItlwm-Sonoma-Preview05
+cp -r ./MacKernelSDK ./RTL8111_driver_for_OS_X
+cp -r ./MacKernelSDK ./AirPort-Utility
+echo "            "
+echo "##### !!! START BUILD FILES !!! #####"
+echo "            "
+cd /$HOME/Desktop/KextsCodiFonteRelease/RestrictEvents/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/AppleALC/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/AirportBrcmFixup/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/EmeraldSDHC/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/WhateverGreen/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/NVMeFix/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/BrightnessKeys/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/HibernationFixup/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/DebugEnhancer/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/CpuTscSync/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/CryptexFixup/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/FeatureUnlock/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/CPUFriend/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/VoodooPS2/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/IntelMausi/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/RTCMemoryFixup/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/VirtualSMC/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/Lilu/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+
+mv ~/Desktop/KextsCodiFonteRelease/Release/package/Kexts ~/Desktop/
