@@ -136,5 +136,9 @@ cd /$HOME/Desktop/KextsCodiFonteRelease/VirtualSMC/
 xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
 cd /$HOME/Desktop/KextsCodiFonteRelease/Lilu/
 xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/LucyRTL8125Ethernet/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/Bluetooth-File-Exchange/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
 
 mv ~/Desktop/KextsCodiFonteRelease/Release/package/Kexts ~/Desktop/
