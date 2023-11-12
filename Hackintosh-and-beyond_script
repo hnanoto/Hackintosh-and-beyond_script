@@ -41,6 +41,8 @@ git clone https://github.com/OpenIntelWireless/itlwm.git
 git clone https://github.com/OpenIntelWireless/itlwm/files/12299048/AirportItlwm-Sonoma-Preview05.zip
 git clone https://github.com/Mieze/RTL8111_driver_for_OS_X.git
 git clone https://github.com/hnanoto/AirPort-Utility.git
+git clone https://github.com/OpenIntelWireless/IntelBluetoothFirmware.git
+git clone https://github.com/zxystd/IntelBTPatcher.git
 echo "            "
 echo "##### !!! COPY LILU TO FOLDERS !!! #####"
 echo "            "
@@ -67,6 +69,7 @@ cp -r ./Release/Lilu.kext ./RTCMemoryFixup
 cp -r ./Release/Lilu.kext ./VirtualSMC
 cp -r ./Release/Lilu.kext ./BrcmPatchRAM
 cp -r ./Release/Lilu.kext ./IntelBluetoothFirmware
+cp -r ./Release/Lilu.kext ./IntelBTPatcher
 echo "            "
 echo "##### !!! COPY MacKernelSDK TO FOLDERS !!! #####"
 echo "            "
@@ -97,6 +100,7 @@ cp -r ./MacKernelSDK ./OpenIntelWireless/itlwm
 cp -r ./MacKernelSDK ./AirportItlwm-Sonoma-Preview05
 cp -r ./MacKernelSDK ./RTL8111_driver_for_OS_X
 cp -r ./MacKernelSDK ./AirPort-Utility
+cp -r ./MacKernelSDK ./IntelBTPatcher
 echo "            "
 echo "##### !!! START BUILD FILES !!! #####"
 echo "            "
@@ -139,6 +143,18 @@ xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
 cd /$HOME/Desktop/KextsCodiFonteRelease/LucyRTL8125Ethernet/
 xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
 cd /$HOME/Desktop/KextsCodiFonteRelease/Bluetooth-File-Exchange/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/BrcmPatchRAM/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/AirPort-Utility/
+xcodebuld CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/OpenIntelWireless/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/RTL8111_driver_for_OS_X/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/IntelBluetoothFirmware/
+xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
+cd /$HOME/Desktop/KextsCodiFonteRelease/IntelBTPatcher/
 xcodebuild CONFIGURATION_BUILD_DIR=/$HOME/Desktop/KextsCodiFonteRelease/Release
 
 mv ~/Desktop/KextsCodiFonteRelease/Release/package/Kexts ~/Desktop/
