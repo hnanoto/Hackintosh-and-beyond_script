@@ -99,7 +99,6 @@ cp -r ./MacKernelSDK ./OpenIntelWireless
 cp -r ./MacKernelSDK ./OpenIntelWireless/itlwm
 cp -r ./MacKernelSDK ./AirportItlwm-Sonoma-Preview05
 cp -r ./MacKernelSDK ./RTL8111_driver_for_OS_X
-cp -r ./MacKernelSDK ./AirPort-Utility
 cp -r ./MacKernelSDK ./IntelBTPatcher
 echo "            "
 echo "##### !!! START BUILD FILES !!! #####"
